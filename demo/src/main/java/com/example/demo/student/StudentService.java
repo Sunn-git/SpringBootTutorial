@@ -5,23 +5,20 @@ import java.time.Month;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class StudentService {
-	public List<Student> getStudents() {
-		List<Student> list = new ArrayList<Student>();
-
-		list.add(
-				new Student(
-							1L, 
-							"Mariam", 
-							"mariam.jamal@gmail.com",
-							LocalDate.of(2000, Month.JANUARY, 5),
-							21
-				)
-		);
-		
-		return list;
+	
+	private final StudentRepository studentRepository;
+	
+	@Autowired
+	public StudentService(StudentRepository studentRepository) {
+		this.studentRepository = studentRepository;
+	}
+	
+	public List<Student> getStudents() {		
+		return studentRepository.findAll();
 	}
 }
