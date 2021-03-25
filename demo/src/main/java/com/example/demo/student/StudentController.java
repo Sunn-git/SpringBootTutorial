@@ -1,6 +1,5 @@
 package com.example.demo.student;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,8 +20,6 @@ public class StudentController {
 	
 	@GetMapping
 	public List<Student> getStudents() {
-		List<Student> list = new ArrayList<Student>();
-
 		return studentService.getStudents();
 	}
 	
