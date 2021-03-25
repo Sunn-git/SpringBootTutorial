@@ -19,15 +19,13 @@ public class StudentConfig {
 									1L, 
 									"Mariam", 
 									"mariam.jamal@gmail.com",
-									LocalDate.of(2000, Month.JANUARY, 5),
-									21
+									LocalDate.of(2000, Month.JANUARY, 5)
 			);
 			
 			Student jannet = new Student(
 									"Janet", 
 									"Janet.jamal@gmail.com",
-									LocalDate.of(2000, Month.AUGUST, 10),
-									21
+									LocalDate.of(2000, Month.MARCH, 10)
 			);
 			
 			List<Student> list = new ArrayList<Student>();

@@ -1,13 +1,10 @@
 package com.example.demo.student;
 
 import java.time.LocalDate;
+import java.time.Period;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table
@@ -30,6 +27,7 @@ public class Student {
 	private String name;
 	private String email;
 	private LocalDate dob;
+	@Transient //DB에 저장될 필요가 없는 값. dob로 계산가능하다.
 	private Integer age;
 	
 	
@@ -41,25 +39,21 @@ public class Student {
 	public Student(Long id, 
 			String name, 
 			String email, 
-			LocalDate dob, 
-			Integer age) {
+			LocalDate dob) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.dob = dob;
-		this.age = age;
 	}
 	
 	public Student(String name, 
 			String email, 
-			LocalDate dob, 
-			Integer age) {
+			LocalDate dob) {
 		super();
 		this.name = name;
 		this.email = email;
 		this.dob = dob;
-		this.age = age;
 	}
 	
 	
@@ -90,7 +84,8 @@ public class Student {
 		this.dob = dob;
 	}
 	public Integer getAge() {
-		return age;
+		return Period.between(dob, LocalDate.now()).getYears();
+		//나이를 이렇게 설정해주면 만나이로 계산된다.(생일이 지나야 +1 됨)
 	}
 	public void setAge(Integer age) {
 		this.age = age;
