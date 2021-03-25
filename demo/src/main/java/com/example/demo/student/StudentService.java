@@ -18,4 +18,9 @@ public class StudentService {
 	public List<Student> getStudents() {		
 		return studentRepository.findAll();
 	}
+
+	public void addNewStudent(Student student) {
+		// TODO Auto-generated method stub
+		System.out.println(student);
+	}
 }
