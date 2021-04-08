@@ -16,6 +16,7 @@ Spring Boot Tutorial | Full Course [2021] [NEW] : <https://youtu.be/9SGDpanrc8U>
 
   |                  |                                              |
   |------------------|----------------------------------------------|
+  | OS	             | Windows10                                    |
   | Project          | Maven                                        |
   | Language         | Java 8                                       |
   | Spring Boot ver. | 2.4.4                                        |
@@ -30,6 +31,7 @@ Spring Boot Tutorial | Full Course [2021] [NEW] : <https://youtu.be/9SGDpanrc8U>
 
   |                  |                                              |
   |------------------|----------------------------------------------|
+  | OS	             | Mac        	                            |
   | Project          | Maven                                        |
   | Language         | Java 11                                      |
   | Spring Boot ver. | 2.4.1                                        |
